@@ -1,5 +1,4 @@
-// Please update this type as same as with the data shape.
-type List = unknown;
+import { List } from './move.typings';
 
 export default function move(list: List, source: string, destination: string): List {
   throw new Error('Not implemented');
