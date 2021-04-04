@@ -1,7 +1,12 @@
 import { List, Source, Destination } from './move.typings';
 
-// TODO: Add jsdoc
-
+/**
+ *
+ * @param list An array of folders as directory state
+ * @param sourceId Source file's id
+ * @param destId Destination folder's id
+ * @returns Updated directory state
+ */
 export default function move(list: List, sourceId: string, destId: string): List {
   const listCopy = JSON.parse(JSON.stringify(list)) as List;
 
