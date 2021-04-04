@@ -102,4 +102,17 @@ describe('move', () => {
       `No folder could be found with id '${invalidId}'`,
     );
   });
+
+  it('throws error if attempted to move within the same folder', () => {
+    const list = [
+      {
+        id: '1',
+        name: 'Folder 1',
+        files: [{ id: '2', name: 'File 1' }],
+      },
+      { id: '3', name: 'Folder 2', files: [{ id: '4', name: 'File 2' }] },
+    ];
+
+    expect(() => move(list, '4', '3')).toThrow('You cannot move within the same folder');
+  });
 });
