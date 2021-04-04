@@ -68,4 +68,38 @@ describe('move', () => {
 
     expect(() => move(list, '2', '4')).toThrow('You cannot specify a file as the destination');
   });
+
+  it('throws error if no source file exists with the given id', () => {
+    const list = [
+      {
+        id: '1',
+        name: 'Folder 1',
+        files: [{ id: '2', name: 'File 1' }],
+      },
+      { id: '3', name: 'Folder 2', files: [{ id: '4', name: 'File 2' }] },
+    ];
+
+    const invalidId = '12';
+
+    expect(() => move(list, invalidId, '3')).toThrow(
+      `No file could be found with id '${invalidId}'`,
+    );
+  });
+
+  it('throws error if no destination folder exists with the given id', () => {
+    const list = [
+      {
+        id: '1',
+        name: 'Folder 1',
+        files: [{ id: '2', name: 'File 1' }],
+      },
+      { id: '3', name: 'Folder 2', files: [{ id: '4', name: 'File 2' }] },
+    ];
+
+    const invalidId = '12';
+
+    expect(() => move(list, '2', invalidId)).toThrow(
+      `No folder could be found with id '${invalidId}'`,
+    );
+  });
 });
