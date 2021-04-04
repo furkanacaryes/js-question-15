@@ -10,3 +10,13 @@ export type Folder = BaseDirectoryItem & {
 };
 
 export type List = Folder[];
+
+export type Source =
+  | {
+      folder: Folder;
+      file: File;
+      fileIndex: number;
+    }
+  | undefined;
+
+export type Destination = { folder: Folder } | undefined;
