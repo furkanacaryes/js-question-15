@@ -1,11 +1,11 @@
-export type File = {
+export type BaseDirectoryItem = {
   id: string;
   name: string;
 };
 
-export type Folder = {
-  id: string;
-  name: string;
+export type File = BaseDirectoryItem;
+
+export type Folder = BaseDirectoryItem & {
   files: File[];
 };
 
