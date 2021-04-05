@@ -56,8 +56,8 @@ const result = [
 | Key         | Type             | Description                  |
 |-------------|------------------|------------------------------|
 | list        | Folder[]         | Given list                   |
-| source      | string           | Id of the moved file         |
-| destination | string           | Id of the folder to be moved |
+| sourceId    | string           | Id of the moved file         |
+| destId      | string           | Id of the folder to be moved |
 
 
 ### Folder shape
